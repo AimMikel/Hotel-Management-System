@@ -1,0 +1,214 @@
+.wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+header {
+	position: relative;
+	min-height: 150px;
+	background-image: url(../assets/bg.jpg);
+	background-position: center;
+	background-size: cover;
+	color: var(--white);
+	z-index: 100;
+}
+
+header .inner {
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
+	padding-top: 10px;
+}
+
+header .inner h1 {
+	font-size: 300%;
+	text-shadow: #000000 0 0 2px;
+}
+header nav {
+	position: absolute;
+	bottom: -30px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	width: 100%;
+	height: 60px;
+	max-width: 800px;
+	color: var(--white);
+}
+header nav.fixed {
+	position: fixed;
+	top: 0;
+	bottom: auto;
+}
+header nav .navs {
+	align-items: stretch;
+}
+nav .nav-btn {
+	padding: 0 15px;
+	height: 60px;
+	min-width: 60px;
+	font-size: 110%;
+	border-radius: 0;
+	z-index: 3;
+	position: relative;
+	background: var(--primary);
+}
+.nav-btn.orders-cart .count {
+	display: block;
+	height: 25px;
+	min-width: 25px;
+	line-height: 15px;
+	border-radius: 13px;
+	background: var(--error);
+	padding: 5px;
+	margin: 0;
+	font-size: 90%;
+}
+.nav-btn.orders-cart .price {
+	position: relative;
+	font-size: 80%;
+	border: 1px solid var(--error);
+	padding: 5px;
+	background: inherit;
+}
+.nav-btn.orders-cart .price::after {
+	content: '';
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	background: inherit;
+	right: -4px;
+	top: calc(50% - 3px);
+	transform: rotate(45deg);
+	border-top: 1px solid var(--error);
+	border-right: 1px solid var(--error);
+}
+nav .nav-btn:hover {
+	background: var(--white);
+	color: var(--primary);
+	box-shadow: #000000 0 0 3px;
+	z-index: 5;
+}
+.navs .nav-btn span:not(:empty) {
+	position: absolute;
+	background: var(--error);
+	top: 5px;
+	right: 5px;
+	font-size: 80%;
+	height: 20px;
+	min-width: 20px;
+	text-align: center;
+	line-height: 20px;
+	border-radius: 10px;
+}
+
+.main-body {
+	display: block;
+	width: 100%;
+	max-width: 800px;
+	margin: 50px auto 20px auto;
+}
+
+.top-window.add-food .inner {
+	max-width: 300px;
+	min-height: 300px;
+}
+.top-window.add-food .input {
+	border-bottom: 1px solid var(--primaryVariant);
+	height: 30px;
+	width: 100%;
+	min-width: 10px;
+	display: block;
+}
+.top-window.add-food label {
+	font-weight: bolder;
+	font-size: 90%;
+	color: var(--primary);
+}
+.top-window.add-food textarea.input {
+	height: 40px;
+	resize: none;
+}
+.top-window.add-food .footer {
+	background: rgba(255, 255, 255, 0.8);
+}
+#addFoodForm {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.each-food {
+	position: relative;
+	width: 32%;
+	height: 250px;
+	margin: auto 0.65%;
+	margin-bottom: 20px;
+	border: 1px solid var(--primaryVariant);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+.each-food .footer {
+	background: rgba(255, 255, 255, 0.8);
+}
+.each-food button {
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+}
+.each-food.added {
+	box-shadow: rgba(0, 101, 255, 0.5) 0 0 0 4px;
+}
+
+.top-window.new-orders .inner {
+	max-width: 600px;
+	overflow-y: auto;
+}
+table {
+	border-collapse: collapse;
+}
+th {
+	color: var(--primary);
+	font-size: 110%;
+}
+th,
+td {
+	padding: 5px;
+	text-align: start;
+}
+tbody tr {
+	border-bottom: 1px solid #ccc;
+}
+
+.orders-group {
+	background: rgba(0, 101, 255, 0.03);
+	box-shadow: #000 0 0 3px;
+	margin-bottom: 20px;
+	overflow: auto;
+}
+
+@media (max-width: 800px) {
+	header .inner {
+		padding: 10px 10px 0 10px;
+	}
+	.each-page > .header {
+		padding: 0 10px 10px 10px;
+	}
+}
+
+@media (max-width: 700px) {
+	.each-food {
+		height: 200px;
+	}
+}
+
+@media (max-width: 400px) {
+	.each-food {
+		width: 48.5%;
+	}
+}
